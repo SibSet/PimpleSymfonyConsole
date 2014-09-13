@@ -2,12 +2,13 @@
 
 namespace SibSet\Pimple\Console;
 
+use Pimple\Container;
 use Symfony\Component\Console\Command\Command;
 
 abstract class ContainerAwareCommand extends Command
 {
     /**
-     * @var \Pimple
+     * @var Container
      */
     private $container;
 
@@ -22,10 +23,10 @@ abstract class ContainerAwareCommand extends Command
     }
 
     /**
-     * @param \Pimple     $container
+     * @param Container   $container
      * @param string|null $name
      */
-    public function __construct(\Pimple $container, $name = null)
+    public function __construct(Container $container, $name = null)
     {
         parent::__construct($name);
 
