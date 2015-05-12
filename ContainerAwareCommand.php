@@ -28,8 +28,8 @@ abstract class ContainerAwareCommand extends Command
      */
     public function __construct(Container $container, $name = null)
     {
-        parent::__construct($name);
-
         $this->container = $container;
+
+        parent::__construct($name);
     }
 }
